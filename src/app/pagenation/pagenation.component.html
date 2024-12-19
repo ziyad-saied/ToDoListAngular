@@ -1,0 +1,48 @@
+<nav class="pagination-container" aria-label="Page navigation">
+  <ul class="pagination">
+    <!-- First Page Button -->
+    <li
+      class="page-item"
+      [class.disabled]="currentPage === 0"
+      (click)="goToFirstPage()"
+    >
+      <button class="page-link" aria-label="First Page">&laquo;</button>
+    </li>
+
+    <!-- Previous Page Button -->
+    <li
+      class="page-item"
+      [class.disabled]="currentPage === 0"
+      (click)="goToPreviousPage()"
+    >
+      <button class="page-link" aria-label="Previous Page">&lt;</button>
+    </li>
+
+    <!-- Page Numbers -->
+    <li
+      class="page-item"
+      (click)="goToNextPage()"
+    >
+      <button class="page-link">{{ currentPage+1 }}</button>
+    </li>
+
+
+    <!-- Next Page Button -->
+    <li
+      class="page-item"
+      [class.disabled]="currentPage === totalPages"
+      (click)="goToNextPage()"
+    >
+      <button class="page-link" aria-label="Next Page">&gt;</button>
+    </li>
+
+    <!-- Last Page Button -->
+    <li
+      class="page-item"
+      [class.disabled]="currentPage === totalPages"
+      (click)="goToLastPage()"
+    >
+      <button class="page-link" aria-label="Last Page">&raquo;</button>
+    </li>
+  </ul>
+</nav>
